@@ -10,14 +10,17 @@ const App =() =>{
         setName(event.target.value);
     }
     const submit = () =>{
+        event.preventDefault();
         setFullname(name);
     }
     return(
     <>
     <div>
+        <form onSubmit={submit}>
         <h1>Hello {fullname} </h1>
         <input type="text" placeholder='Enter Your Name' onChange={inputEvent} value={name} />
-        <button onClick={submit}>Submit</button>
+        <button>Submit</button>
+        </form>
     </div>
     </>
     );
